@@ -1,5 +1,5 @@
 from pyrogram.api import functions
-
+from pyrogram import Client
 
 app_id = 1194939
 app_hash = "d8ed4b10ed554767a4570cf59c3ea49e"
