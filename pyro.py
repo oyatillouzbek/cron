@@ -8,14 +8,12 @@ app_id = 1194939
 app_hash = "d8ed4b10ed554767a4570cf59c3ea49e"
 
 app = Client("my_account", api_id=app_id, api_hash=app_hash)
-app.start()
 
 X=datetime.datetime.now()
 Y=X.strftime("%H:%M")
-while True:
-    app.send(functions.account.UpdateProfile(
+app.send(functions.account.UpdateProfile(
             first_name=str(Y),
             about="Soat: {}           Admin: Tilon".format(str(Y))
             ))
-time.sleep(60)
-app.stop()
+time.sleep(5)
+app.run()
