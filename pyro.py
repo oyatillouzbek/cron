@@ -1,6 +1,3 @@
-import datetime
-import pytz
-from pyrogram import Client, Filters
 from pyrogram.api import functions
 
 
