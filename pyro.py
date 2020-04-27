@@ -1,12 +1,21 @@
-def main(): 
-    from crontab import CronTab
+import datetime
+from pyrogram import Client, Filters
+from pyrogram.api import functions
 
-    cron = CronTab(user=True)
 
-    job = cron.new(command='python pyro.py')
-    job.minute.on(1)
+app_id = 1194939
+app_hash = "d8ed4b10ed554767a4570cf59c3ea49e"
 
-    cron.write()
+app = Client("my_account", api_id=app_id, api_hash=app_hash)
 
-if __name__ == "__main__":
-  main()
+@app.on_message(Filters.audio)
+def start(client,message):
+    X=datetime.datetime.now()
+    Y=X.strftime("%H:%M")
+    while True:
+        app.send(functions.account.UpdateProfile(
+            first_name=str(Y),
+            about="Soat: {}           Admin: Tilon".format(str(Y))
+            ))
+
+app.run()
