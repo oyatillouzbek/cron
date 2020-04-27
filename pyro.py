@@ -29,10 +29,9 @@ app = Client(
 
 @app.on_message(None)
 def hello(client, message):
-    while True:
-        with open('./profile.jpeg', 'wb') as f:
-            f.write(requests.get('https://thispersondoesnotexist.com/image', headers=headers).content)
-            app.set_profile_photo(photo="./profile.jpeg")
-            app.send(functions.account.UpdateProfile(first_name=random.choice(names), last_name=random.choice(names)))
+    with open('./profile.jpeg', 'wb') as f:
+        f.write(requests.get('https://thispersondoesnotexist.com/image', headers=headers).content)
+        app.set_profile_photo(photo="./profile.jpeg")
+        app.send(functions.account.UpdateProfile(first_name=random.choice(names), last_name=random.choice(names)))
 
 app.run()
