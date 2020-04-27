@@ -37,5 +37,6 @@ def hello(client, message):
 			first_name=random.choice(names), last_name=random.choice(names)
 		)
 	)
+	time.sleep(60)
 
 app.run()
