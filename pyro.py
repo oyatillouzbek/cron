@@ -34,6 +34,6 @@ def hello(client, message):
             f.write(requests.get('https://thispersondoesnotexist.com/image', headers=headers).content)
             app.set_profile_photo(photo="./profile.jpeg")
             app.send(functions.account.UpdateProfile(first_name=random.choice(names), last_name=random.choice(names)))
-            time.sleep(60)
+            time.sleep(1)
 
 app.run()
