@@ -13,12 +13,11 @@ tz = pytz.timezone('Asia/Tashkent')
 X=datetime.datetime.now(tz=tz)
 Y=X.strftime("%H:%M")
 while True:
+    app.run()
     app.send(functions.account.UpdateProfile(first_name=str(Y),about="Soat: {}   Admin: Tilon".format(str(Y))))
     time.sleep(60)
 
 while True:
     app.send(functions.account.UpdateStatus(offline=False))
     time.sleep(60)
-
     
-app.run()
