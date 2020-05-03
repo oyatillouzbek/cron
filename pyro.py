@@ -15,4 +15,4 @@ while True:
     first_name=str(x),
     about="time" +str(x)
     ))
-    time.sleep(60)
+    time.sleep(30)
