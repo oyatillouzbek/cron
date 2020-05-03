@@ -8,7 +8,7 @@ api_hash = "d8ed4b10ed554767a4570cf59c3ea49e"
 app = Client("my_account",api_id,api_hash)
 app.start()
 while True:
-    ok = pytz.timezone(Asia/Tashkent)
+    ok = pytz.timezone("Asia/Tashkent")
     x = datetime.datetime.now(tz=ok)
     x = x.strftime("%H:%M")
     app.send(functions.account.UpdateProfile(
